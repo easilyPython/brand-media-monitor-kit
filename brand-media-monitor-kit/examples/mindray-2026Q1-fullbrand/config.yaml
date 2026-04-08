@@ -1,0 +1,32 @@
+brand: 迈瑞医疗
+brand_keywords:
+  - 迈瑞
+  - 迈瑞医疗
+  - 深圳迈瑞生物医疗电子股份有限公司
+  - 检验医学
+topic_limiter:
+  - 2026Q1 品牌宣传稿件
+  - 2026Q1 外部媒体投放与转载内容
+  - 不限单一产品线，关注品牌主叙事与传播策略
+date_range:
+  start: 2026-01-01
+  end: 2026-03-31
+channels:
+  official:
+    - 迈瑞官网
+    - 迈瑞体外诊断
+  external:
+    - CACLP体外诊断资讯
+    - 体外诊断网
+    - IVD资讯
+    - IVD工具人
+    - 体外诊断价值圈
+    - MIR医疗仪器与试剂
+    - 体外诊断观察
+    - 乘风印象
+    - 小桔灯
+    - IVD市场部
+    - 百度
+outputs:
+  - raw_table
+  - analysis_report

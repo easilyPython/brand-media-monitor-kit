@@ -1,76 +1,91 @@
 # Workflow
 
-## Step 1：定义监测任务
+## Step 1: Define Monitoring Spec
 
-先把需求固定成 monitoring spec。
+先固定任务定义，不要直接抓取。
 
-必须明确：
+必填：
 
-- brand
-- brand_keywords
-- date_range
-- topic_limiter
-- official_channels
-- external_channels
+- `brand`
+- `brand_keywords`
+- `date_range`
+- `topic_limiter`
+- `official_channels`
+- `external_channels`
+- `outputs`
 
-## Step 2：建立渠道注册表
+建议使用 `prompts/01-define-monitoring-spec.md`。
 
-对每个渠道记录：
+## Step 2: Build Channel Registry
 
-- channel_name
-- channel_group
-- platform
-- collection_method
-- reading_count_available
-- evidence_priority
+把松散渠道清单变成可执行注册表。
 
-## Step 3：分渠道抓取
+每个渠道至少记录：
+
+- `channel_name`
+- `channel_group`
+- `platform`
+- `collection_method`
+- `reading_count_available`
+- `evidence_priority`
+- `notes`
+
+模板见 `templates/channel-registry-template.md`。
+
+## Step 3: Collect by Channel
 
 推荐顺序：
 
-1. 官网 / 官方新闻
+1. 官方官网/官方新闻
 2. 官方公众号
 3. 行业媒体公众号池
 4. 站点资讯页
-5. 百度补面
+5. 搜索补面
 
-公众号层要求：
+执行规则：
 
-- 优先通过 `agent-reach` 搜索
-- 命中链接后继续用 `wechat-article-extractor` 解析
-- 百度不能替代公众号原文层
+- 严格受 `date_range` 与 `topic_limiter` 约束
+- 官方与外部媒体分开记录
+- 零命中渠道也要记录
+- 公众号优先走 `agent-reach`，命中后用 `wechat-article-extractor` 解析
+- 百度或网页搜索只能补面，不能替代公众号主证据
 
-## Step 4：归一化原始数据表
+## Step 4: Normalize Raw Table
 
 固定字段：
 
-- publish_date
-- title
-- link
-- platform
-- media_name
-- channel_type
-- reading_count
-- reading_count_note
-- content_type
-- sentiment
-- keyword_hit
-- notes
+- `publish_date`
+- `title`
+- `link`
+- `platform`
+- `media_name`
+- `channel_type`
+- `reading_count`
+- `reading_count_note`
+- `content_type`
+- `sentiment`
+- `keyword_hit`
+- `notes`
 
-## Step 5：输出分析报告
+缺失值请保留 `NA`，禁止补造数据。
 
-至少覆盖：
+## Step 5: Write Analysis Report
 
-- 官方输出主线
-- 外部媒体放大关系
-- 情绪与风险
-- 合作媒体建议
-- 下一阶段内容建议
+报告必须回答：
 
-## Step 6：转化为品牌动作
+- 监测期内品牌实际讲了什么
+- 官方叙事与媒体放大如何协同
+- 主题结构、节奏、风险与空位
+- 哪些媒体可继续合作
+- 下一阶段内容该补什么
 
-输出：
+建议使用 `prompts/05-generate-analysis-report.md`。
+
+## Step 6: Convert to Action Plan
+
+最终交付不止“监测结果”，还应包含：
 
 - 媒体合作建议
 - 下一阶段内容建议
-- 监测盲区提示
+- 后续监测重点
+- 监测边界说明

@@ -1,16 +1,21 @@
-brand: 示例品牌
+brand: 九强生物
 brand_keywords:
-  - 示例品牌
-  - 示例公司全称
+  - 九强生物
+  - 北京九强生物技术股份有限公司
+  - 九强
+  - blood coagulation
+  - 血凝
+  - 凝血
+topic_limiter:
+  - 凝血相关品牌活动
+  - 凝血相关报道
 date_range:
   start: 2026-01-01
   end: 2026-03-31
-topic_limiter:
-  - 示例主题限制
 channels:
   official:
-    - 品牌官网
-    - 品牌官方公众号
+    - 九强生物官网
+    - 九强生物公众号
   external:
     - CACLP体外诊断资讯
     - 体外诊断网
@@ -23,10 +28,6 @@ channels:
     - 小桔灯
     - IVD市场部
     - 百度
-platform_priority:
-  - wechat
-  - website
-  - search
 outputs:
-  - raw_table.csv
-  - analysis_report.md
+  - raw_table
+  - analysis_report
