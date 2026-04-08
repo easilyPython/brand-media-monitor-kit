@@ -1,0 +1,27 @@
+brand: 示例品牌
+brand_keywords:
+  - 示例品牌
+  - 示例公司全称
+date_range:
+  start: 2026-01-01
+  end: 2026-03-31
+topic_limiter:
+  - 示例主题
+official_channels:
+  - 官网
+  - 官方公众号
+external_channels:
+  - CACLP体外诊断资讯
+  - 体外诊断网
+  - IVD资讯
+  - IVD工具人
+  - 体外诊断价值圈
+  - MIR医疗仪器与试剂
+  - 体外诊断观察
+  - 乘风印象
+  - 小桔灯
+  - IVD市场部
+  - 百度
+outputs:
+  - raw_table
+  - analysis_report
